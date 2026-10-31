@@ -11,4 +11,9 @@ public class Traps : MonoBehaviour
             collision.transform.position = respawnPoint.position;
         }
     }
+
+    public void SetRespawn(Transform respawn)
+    {
+        respawnPoint = respawn;
+    }
 }
