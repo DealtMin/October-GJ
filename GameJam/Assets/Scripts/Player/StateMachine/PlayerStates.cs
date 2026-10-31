@@ -23,6 +23,7 @@ class WalkState: AbstractPlayerState
         Vector2 normalizedInput = _stateMachine.Player.MoveInput.normalized;
         
         rb.linearVelocity = normalizedInput * _stateMachine.Player.moveSpeed;
+        _stateMachine.Player.SetFacingDirection(normalizedInput);
     }
     public override void LogicUpdate() {
         if (_stateMachine.Player.MoveInput.sqrMagnitude <= 0.01f) _stateMachine.ChangeState(new IdleState(_stateMachine));
@@ -44,13 +45,30 @@ class InteractState: AbstractPlayerState
 
 class EatState: AbstractPlayerState
 {
+    private float interactTimer;
+    private float interactDuration = 0.5f;
     public EatState(PlayerStateMachine sm) : base(sm) { }
-    public override void Enter() => _stateMachine.Player.TryEat();
+
+    public override void Enter()
+    {        
+        //_stateMachine.Player.Animator.SetTrigger("Eat");
+        _stateMachine.Player.TryEat();
+    }
+
+    public override void LogicUpdate()
+    {
+        interactTimer += Time.deltaTime;
+
+        if (interactTimer >= interactDuration)
+        {
+            if (_stateMachine.Player.MoveInput.sqrMagnitude > 0.01f)
+                _stateMachine.ChangeState(new WalkState(_stateMachine));
+            else
+                _stateMachine.ChangeState(new IdleState(_stateMachine));
+        }
+    }
     public override void PhysicsUpdate() {
         var rb = _stateMachine.Player.Rigidbody; 
         rb.linearVelocity = Vector2.zero;
-    }
-    public override void LogicUpdate() {
-        _stateMachine.ChangeState(new IdleState(_stateMachine));
     }
 }

@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public InputActionAsset inputActions;
     public Rigidbody2D Rigidbody;
     public Animator Animator;
+    public float interactDistance = 1.5f;
+    public LayerMask interactableLayer;
+    public Vector2 FacingDirection { get; private set; } = Vector2.down; 
 
     public float moveSpeed = 5f;
 
@@ -33,14 +36,50 @@ public class PlayerController : MonoBehaviour
         eatAction = playerMap.FindAction("Eat");
     }
 
+    public void SetFacingDirection(Vector2 direction)
+    {
+        if (direction.sqrMagnitude > 0.01f)
+        {
+            FacingDirection = direction.normalized;
+        }
+    }
+
     public void TryInteract()
     {
-        Debug.Log("interact press");
+        Vector2 origin = transform.position;
+        
+        Vector2 direction = FacingDirection;
+        Debug.DrawRay(origin, direction * interactDistance, Color.green, 1f);
+        
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, interactDistance, interactableLayer);
+
+        if (hit.collider != null)
+        {
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                interactable.Interact();
+            }
+        }
     }
 
     public void TryEat()
     {
-        Debug.Log("Eat press");
+        Vector2 origin = transform.position;
+        
+        Vector2 direction = FacingDirection;
+        Debug.DrawRay(origin, direction * interactDistance, Color.green, 1f);
+        
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, interactDistance, interactableLayer);
+
+        if (hit.collider != null)
+        {
+            IEdible edible = hit.collider.GetComponent<IEdible>();
+            if (edible != null)
+            {
+                edible.Eat();
+            }
+        }
     }
 
     private void OnEnable()
