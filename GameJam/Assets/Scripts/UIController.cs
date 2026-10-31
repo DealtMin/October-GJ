@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
@@ -6,6 +7,7 @@ public class UIController : MonoBehaviour
     [SerializeField] float scaleFactor;
     [SerializeField] Sprite buttonHoverSprite;
     [SerializeField] Sprite buttonIdleSprite;
+    [SerializeField] GameObject settingsPanel;
     
     public void OnHoverEnter(Transform obj)
     {
@@ -18,13 +20,33 @@ public class UIController : MonoBehaviour
         
     }
 
-    public void ChangeSpriteHover(SpriteRenderer renderer)
+    public void ChangeImageHover(Button button)
     {
-        renderer.sprite = buttonHoverSprite;
+        button.image.sprite = buttonHoverSprite;
     }
     
-    public void ChangeSpriteExit(SpriteRenderer renderer)
+    public void ChangeImageExit(Button button)
     {
-        renderer.sprite = buttonIdleSprite;
+        button.image.sprite = buttonIdleSprite;
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settingsPanel.SetActive(false);
     }
 }
