@@ -554,6 +554,135 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06d3f47e74b92f04a8ef55312bac8c9c, type: 3}
+--- !u!1001 &4458999523508287526
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1275698602726737229, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275698602726737229, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275698602726737229, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035576715001590113, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0008746749
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722133396229843712, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655644086792018236, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655644086792018236, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225461937754614461, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_Name
+      value: DialogPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422578736215846098, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422578736215846098, guid: e651081a13e786e4994d014eed949b4a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e651081a13e786e4994d014eed949b4a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -563,3 +692,4 @@ SceneRoots:
   - {fileID: 1231206432997977223}
   - {fileID: 414112604382020315}
   - {fileID: 475224519724468252}
+  - {fileID: 4458999523508287526}
