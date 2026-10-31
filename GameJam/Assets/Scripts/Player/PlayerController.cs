@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction;
     private InputAction eatAction;
     private InputAction interactAction;
-    private bool _isFliped = false;
     private SpriteRenderer _spriteRenderer;
     private void Awake()
     {
