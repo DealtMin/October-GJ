@@ -9,6 +9,7 @@ public class BallSpawner : MonoBehaviour
     [SerializeField] GameObject prefab;
     [SerializeField] private float speed;
     [SerializeField] private float delay;
+    [SerializeField] Transform respawnPoint;
     
     float currentTime;
 
@@ -24,6 +25,7 @@ public class BallSpawner : MonoBehaviour
         {
             GameObject newBall = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
             newBall.GetComponent<BallBehaviour>().SetParams(direction, speed, delay);
+            newBall.GetComponent<Traps>().SetRespawn(respawnPoint);
             currentTime = 0;
         }
     }
