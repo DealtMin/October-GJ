@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TryEat()
+    public bool TryEat()
     {
         Vector2 origin = transform.position;
         
@@ -77,8 +77,10 @@ public class PlayerController : MonoBehaviour
             if (edible != null)
             {
                 edible.Eat();
+                return true;
             }
         }
+        return false;
     }
 
     private void OnEnable()
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        StateMachine.CurrentState.AnimationUpdate();
         StateMachine.CurrentState.LogicUpdate();
     }
 
