@@ -8,8 +8,10 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Rigidbody;
     public Animator Animator;
     public float interactDistance = 1.5f;
+    public float raycastOffset = 5f;
     public LayerMask interactableLayer;
     public Vector2 FacingDirection { get; private set; } = Vector2.down; 
+    
 
     public float moveSpeed = 5f;
 
@@ -20,9 +22,11 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction;
     private InputAction eatAction;
     private InputAction interactAction;
+    private SpriteRenderer _spriteRenderer;
     private void Awake()
     {
         InteractInput = false;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
 
         Rigidbody = GetComponent<Rigidbody2D>();
         Rigidbody.gravityScale = 0f; 
@@ -40,12 +44,14 @@ public class PlayerController : MonoBehaviour
         if (direction.sqrMagnitude > 0.01f)
         {
             FacingDirection = direction.normalized;
+            TryFlip();
         }
     }
 
     public void TryInteract()
     {
         Vector2 origin = transform.position;
+        origin.y = origin.y + raycastOffset;
         
         Vector2 direction = FacingDirection;
         Debug.DrawRay(origin, direction * interactDistance, Color.green, 1f);
@@ -62,9 +68,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TryEat()
+    public bool TryEat()
     {
         Vector2 origin = transform.position;
+        origin.y = origin.y + raycastOffset;
         
         Vector2 direction = FacingDirection;
         Debug.DrawRay(origin, direction * interactDistance, Color.green, 1f);
@@ -77,8 +84,15 @@ public class PlayerController : MonoBehaviour
             if (edible != null)
             {
                 edible.Eat();
+                return true;
             }
         }
+        return false;
+    }
+    private void TryFlip()
+    {
+        if (FacingDirection.x > 0) _spriteRenderer.flipX = true;
+        else _spriteRenderer.flipX = false;
     }
 
     private void OnEnable()
@@ -101,6 +115,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        StateMachine.CurrentState.AnimationUpdate();
         StateMachine.CurrentState.LogicUpdate();
     }
 

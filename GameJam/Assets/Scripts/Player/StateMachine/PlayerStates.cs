@@ -3,7 +3,8 @@ using UnityEngine;
 class IdleState: AbstractPlayerState
 {
     public IdleState(PlayerStateMachine sm) : base(sm) { }
-    //public override void Enter() => _stateMachine.Player.Animator.SetTrigger("Idle");
+    public override void Enter() => _stateMachine.Player.Animator.SetBool("Idle", true);
+    public override void Exit() => _stateMachine.Player.Animator.SetBool("Idle", false);
     public override void PhysicsUpdate() {
         var rb = _stateMachine.Player.Rigidbody; 
         rb.linearVelocity = Vector2.zero;
@@ -16,8 +17,8 @@ class IdleState: AbstractPlayerState
 class WalkState: AbstractPlayerState
 {
     public WalkState(PlayerStateMachine sm) : base(sm) { }
-    //public override void Enter() => _stateMachine.Player.Animator.SetBool("Walk", true);
-    //public override void Exit() => _stateMachine.Player.Animator.SetBool("Walk", false);
+    public override void Enter() => _stateMachine.Player.Animator.SetBool("Walk", true);
+    public override void Exit() => _stateMachine.Player.Animator.SetBool("Walk", false);
     public override void PhysicsUpdate() {
         var rb = _stateMachine.Player.Rigidbody; 
         Vector2 normalizedInput = _stateMachine.Player.MoveInput.normalized;
@@ -46,13 +47,20 @@ class InteractState: AbstractPlayerState
 class EatState: AbstractPlayerState
 {
     private float interactTimer;
-    private float interactDuration = 0.5f;
+    private float interactDuration = 3f;
     public EatState(PlayerStateMachine sm) : base(sm) { }
 
     public override void Enter()
-    {        
-        //_stateMachine.Player.Animator.SetTrigger("Eat");
-        _stateMachine.Player.TryEat();
+    {
+        if (_stateMachine.Player.TryEat()) _stateMachine.Player.Animator.SetTrigger("Eat");
+        else
+        {
+            if (_stateMachine.Player.MoveInput.sqrMagnitude > 0.01f)
+                _stateMachine.ChangeState(new WalkState(_stateMachine));
+            else
+                _stateMachine.ChangeState(new IdleState(_stateMachine));
+        }
+        
     }
 
     public override void LogicUpdate()
