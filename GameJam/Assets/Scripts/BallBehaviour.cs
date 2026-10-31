@@ -13,7 +13,7 @@ public class BallBehaviour : MonoBehaviour
         speed = _speed;
         delay = _delay;
         Invoke("SetSpeed", delay);
-        Invoke("Stop", 20f);
+        Invoke("Stop", 10f);
     }
     
 
