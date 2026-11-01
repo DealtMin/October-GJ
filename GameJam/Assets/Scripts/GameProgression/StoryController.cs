@@ -62,7 +62,7 @@ public class StoryController : MonoBehaviour
     }
     private void BedroomDialog()
     {
-        DialogsController.Instance.MonologStart(bedroommonolog.monologlines);
+        //DialogsController.Instance.MonologStart(bedroommonolog.monologlines);
         coridor.SetActive(true);
         coridorWall.SetActive(false);
     }
