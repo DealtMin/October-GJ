@@ -12,11 +12,15 @@ public class Bootstrapper : MonoBehaviour
     [SerializeField] private AudioMixer mixer;
     
     [SerializeField] AudioClip mainTheme;
+    [SerializeField] AudioClip kolokol;
+    IAudioService audioService;
     
     
     private void Awake()
     {
         ServiceLocator.Register<IAudioService>(new AudioService(source, null, mixer));
-        ServiceLocator.Get<IAudioService>().PlayMusic(mainTheme);
+        audioService = ServiceLocator.Get<IAudioService>();
+        audioService.PlayMusic(mainTheme);
+        audioService.PlaySound(kolokol);
     }
 }

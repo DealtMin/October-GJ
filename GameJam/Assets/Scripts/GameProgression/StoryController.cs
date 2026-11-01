@@ -13,6 +13,9 @@ public class StoryController : MonoBehaviour
     [SerializeField] private MonologSO finalmonolog;
     [SerializeField] private MonologSO bedroommonolog;
 
+    [SerializeField] private AudioClip horrorTheme;
+    IAudioService _audioService;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,6 +32,7 @@ public class StoryController : MonoBehaviour
             StoryEvents[evt] = false;
         }
         ItemCollected += CheckCount;
+        _audioService = ServiceLocator.Get<IAudioService>();
     }
 
     private void OnDestroy()
@@ -65,6 +69,7 @@ public class StoryController : MonoBehaviour
         //DialogsController.Instance.MonologStart(bedroommonolog.monologlines);
         coridor.SetActive(true);
         coridorWall.SetActive(false);
+        _audioService.PlayMusic(horrorTheme);
     }
 }
 
