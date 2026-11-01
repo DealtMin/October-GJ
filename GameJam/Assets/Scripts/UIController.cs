@@ -30,6 +30,11 @@ public class UIController : MonoBehaviour
         
         _audio = ServiceLocator.Get<IAudioService>();
     }
+
+    public void OpenLastMenu()
+    {
+        SceneManager.LoadScene(4);
+    }
     
     public void OnExitHover()
     {
@@ -39,7 +44,7 @@ public class UIController : MonoBehaviour
     
     public void OnPlayHover()
     {
-        rightGirl.sprite = eyesClosed;
+         rightGirl.sprite = eyesClosed;
         leftGirl.sprite = eyesOpen;
     }
     
@@ -51,8 +56,8 @@ public class UIController : MonoBehaviour
     public void OnHoverExit(Transform obj)
     {
         obj.localScale /= scaleFactor;
-        leftGirl.sprite = eyesClosed;
-        rightGirl.sprite = eyesClosed;
+        if (rightGirl) leftGirl.sprite = eyesClosed;
+        if (rightGirl) rightGirl.sprite = eyesClosed;
         
     }
     
