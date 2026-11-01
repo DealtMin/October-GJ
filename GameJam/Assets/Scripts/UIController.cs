@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -14,7 +15,20 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private Image leftGirl;
     [SerializeField] private Image rightGirl;
+    
+    private IAudioService _audio;
+    [Header("For audio service")]
+    [SerializeField] private AudioSource source;
+    [SerializeField] private Slider slider;
+    [SerializeField] private AudioMixer mixer;
 
+    void Awake()
+    {
+        ServiceLocator.Register<IAudioService>(new AudioService(source, slider, mixer));
+        
+        _audio = ServiceLocator.Get<IAudioService>();
+    }
+    
     public void OnExitHover()
     {
         leftGirl.sprite = eyesClosed;
@@ -38,6 +52,11 @@ public class UIController : MonoBehaviour
         leftGirl.sprite = eyesClosed;
         rightGirl.sprite = eyesClosed;
         
+    }
+    
+    public void SetVolumeBySlider()
+    {
+        _audio.SetMasterVolume();
     }
 
     public void ChangeImageHover(Button button)
