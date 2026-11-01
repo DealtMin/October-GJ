@@ -7,12 +7,13 @@ public class StoryTrigger : MonoBehaviour
     [SerializeField] string dialog;
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerController>())
+        var player = collision.gameObject.GetComponent<PlayerController>();
+        if (player)
         {
             if (!StoryController.StoryEvents[storyEvent])
             {
                 StoryController.SetStoryEvent(storyEvent);
-                Debug.Log("ЗАГЛУШКА ДИАЛОГА "+dialog);
+                player.StartDialog();
                 gameObject.SetActive(false);
             }
         }
