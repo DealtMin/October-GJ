@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     public bool InteractInput { get; private set; } = false;
     public bool InDialog { get; private set; } = false;
 
+    [SerializeField] private DialogsController dialogsController;
+    [SerializeField] private GameObject interactText;
+
     private InputAction moveAction;
     private InputAction eatAction;
     private InputAction interactAction;
@@ -48,7 +51,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TryInteract()
+    public void TryInteract(bool interact = true)
     {
         Vector2 origin = transform.position;
         origin.y = origin.y + raycastOffset;
@@ -63,9 +66,12 @@ public class PlayerController : MonoBehaviour
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
             if (interactable != null)
             {
-                interactable.Interact();
+                if (interact) interactable.Interact();
+                else interactText.SetActive(true);
+                return;
             }
         }
+        interactText.SetActive(false);
     }
 
     public bool TryEat()
@@ -82,9 +88,8 @@ public class PlayerController : MonoBehaviour
         {
             IEdible edible = hit.collider.GetComponent<IEdible>();
             if (edible != null)
-            {
-                edible.Eat();
-                return true;
+            {                
+                return edible.Eat();
             }
         }
         return false;
@@ -105,7 +110,10 @@ public class PlayerController : MonoBehaviour
         interactAction.started += OnInteractPerformed;     
 
         eatAction.started += OnEatPerformed;
-        eatAction.Enable();  
+        eatAction.Enable(); 
+        dialogsController.dialogStarts += StartDialog;
+        dialogsController.dialogEnds += ExitDialog;
+
     }
 
     private void Start()
@@ -115,6 +123,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        TryInteract(false);
         StateMachine.CurrentState.AnimationUpdate();
         StateMachine.CurrentState.LogicUpdate();
     }
@@ -134,20 +143,24 @@ public class PlayerController : MonoBehaviour
         interactAction.Disable();   
 
         eatAction.started -= OnEatPerformed;
-        eatAction.Disable();         
+        eatAction.Disable(); 
+
+        dialogsController.dialogStarts -= StartDialog;
+        dialogsController.dialogEnds -= ExitDialog;        
     }
 
     public void StartDialog()
     {
+        if (InDialog) return;
+        moveAction.Disable();
         InDialog = true;
-        Debug.Log("dialog started");
         StateMachine.ChangeState(new InteractState(StateMachine));
-        ExitDialog(); // ЗАГЛУШКА ПОТОМ УБРАТЬ
     }
 
     public void ExitDialog()
     {
         InDialog = false;
+        moveAction.Enable();
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)
