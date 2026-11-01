@@ -1,4 +1,4 @@
 public interface IEdible
 {
-    void Eat();
+    bool Eat();
 }

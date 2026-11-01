@@ -14,13 +14,17 @@ public class EatScript : MonoBehaviour, IEdible
         _hasDialog = GetComponent<HasDialog>();
     }
 
-    public void Eat()
+    public bool Eat()
     {
         if (_hasDialog.IsDialogReaden())
-        {
+        {            
             Debug.Log(gameObject.name + " съеден");
-            _audio.PlaySound(audioClip);
+            _audio.PlaySound(audioClip);            
+            CollectableController.CollectItem(this);
+            StoryController.ItemCollected.Invoke();
             Destroy(gameObject);
+            return true;
         }
+        return false;
     }
 }
