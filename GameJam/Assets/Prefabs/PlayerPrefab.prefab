@@ -139,12 +139,13 @@ MonoBehaviour:
   Rigidbody: {fileID: 7190290091859693192}
   Animator: {fileID: 2072385014481278123}
   interactDistance: 5
-  raycastOffset: 4
+  raycastOffset: 3
   interactableLayer:
     serializedVersion: 2
     m_Bits: 8
   moveSpeed: 10
   dialogsController: {fileID: 0}
+  interactText: {fileID: 0}
 --- !u!95 &2072385014481278123
 Animator:
   serializedVersion: 7

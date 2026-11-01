@@ -6,14 +6,16 @@ public class BallBehaviour : MonoBehaviour
     private float _currentSpeed = 0;
     Vector3 direction;
     private float delay;
+    float lifetime;
 
-    public void SetParams(Vector3 _direction, float _speed, float _delay)
+    public void SetParams(Vector3 _direction, float _speed, float _delay, float _lifetime)
     {
         direction = _direction;
         speed = _speed;
         delay = _delay;
+        lifetime = _lifetime;
         Invoke("SetSpeed", delay);
-        Invoke("Stop", 10f);
+        Invoke("Stop", lifetime);
     }
     
 
