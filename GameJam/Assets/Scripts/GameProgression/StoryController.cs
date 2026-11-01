@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class StoryController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class StoryController : MonoBehaviour
     [SerializeField] private GameObject coridorWall;
     [SerializeField] private MonologSO finalmonolog;
     [SerializeField] private MonologSO bedroommonolog;
+    [SerializeField] private GameObject particles1;
+    [SerializeField] private GameObject particles2;
 
     [SerializeField] private AudioClip horrorTheme;
     IAudioService _audioService;
@@ -64,12 +67,22 @@ public class StoryController : MonoBehaviour
     {
         DialogsController.Instance.MonologStart(finalmonolog.monologlines);
     }
+
+    void NextScene()
+    {
+        SceneManager.LoadScene(3);
+        Invoke("NextScene", 10f);
+        
+    }
+    
     private void BedroomDialog()
     {
         //DialogsController.Instance.MonologStart(bedroommonolog.monologlines);
         coridor.SetActive(true);
         coridorWall.SetActive(false);
         _audioService.PlayMusic(horrorTheme);
+        particles1.SetActive(true);
+        particles2.SetActive(false);
     }
 }
 

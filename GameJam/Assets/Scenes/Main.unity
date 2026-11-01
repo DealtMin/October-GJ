@@ -1387,6 +1387,8 @@ Transform:
   - {fileID: 1256912657}
   - {fileID: 116814312}
   - {fileID: 379319547}
+  - {fileID: 1612572751}
+  - {fileID: 1845244575}
   - {fileID: 629856520}
   - {fileID: 1965106304}
   - {fileID: 1591523627}
@@ -3782,6 +3784,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5394537357524551713, guid: fbecdde1a0fa3a1418475b0b57e1853f, type: 3}
+      propertyPath: lifetime
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394537357524551713, guid: fbecdde1a0fa3a1418475b0b57e1853f, type: 3}
       propertyPath: direction.x
       value: 0
       objectReference: {fileID: 0}
@@ -4505,7 +4511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5394537357524551713, guid: fbecdde1a0fa3a1418475b0b57e1853f, type: 3}
       propertyPath: lifetime
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5394537357524551713, guid: fbecdde1a0fa3a1418475b0b57e1853f, type: 3}
       propertyPath: respawnPoint
@@ -7069,7 +7075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &629856519
 SpriteRenderer:
   serializedVersion: 2
@@ -7143,8 +7149,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 832743404}
-  - {fileID: 1612572751}
-  - {fileID: 1845244575}
   m_Father: {fileID: 101976767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &634256075
@@ -13691,6 +13695,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5394537357524551713, guid: fbecdde1a0fa3a1418475b0b57e1853f, type: 3}
+      propertyPath: lifetime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394537357524551713, guid: fbecdde1a0fa3a1418475b0b57e1853f, type: 3}
       propertyPath: direction.y
       value: -1
       objectReference: {fileID: 0}
@@ -18149,7 +18157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1612572749
 ParticleSystemRenderer:
   serializedVersion: 7
@@ -22962,11 +22970,11 @@ Transform:
   m_GameObject: {fileID: 1612572748}
   serializedVersion: 2
   m_LocalRotation: {x: -0.042235043, y: 0.7058443, z: 0.042235047, w: 0.70584434}
-  m_LocalPosition: {x: -12.927109, y: -7.300001, z: -71.1}
+  m_LocalPosition: {x: -149.50252, y: 7.397499, z: -71.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 629856520}
+  m_Father: {fileID: 101976767}
   m_LocalEulerAnglesHint: {x: -6.849, y: 90, z: 0}
 --- !u!1 &1619331667
 GameObject:
@@ -25512,7 +25520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1845244573
 ParticleSystemRenderer:
   serializedVersion: 7
@@ -30325,11 +30333,11 @@ Transform:
   m_GameObject: {fileID: 1845244572}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70584416, y: 0.04223783, z: 0.70584416, w: 0.04223783}
-  m_LocalPosition: {x: 10.272888, y: -3.4000072, z: -71.1}
+  m_LocalPosition: {x: -126.30252, y: 11.297493, z: -71.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 629856520}
+  m_Father: {fileID: 101976767}
   m_LocalEulerAnglesHint: {x: -6.849, y: -90, z: 180}
 --- !u!1 &1846040843
 GameObject:
@@ -32109,7 +32117,7 @@ Transform:
   m_GameObject: {fileID: 1993253549}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -199.97, y: 115.229996, z: 15.2}
+  m_LocalPosition: {x: -199.97, y: 115.65, z: 15.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32335,9 +32343,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StoryController
   coridor: {fileID: 629856518}
   coridorWall: {fileID: 1902265773}
-  finalmonolog: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
+  finalmonolog: {fileID: 11400000, guid: 16675673c986b9e498c0948cf03b1bb4, type: 2}
   bedroommonolog: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
-  horrorTheme: {fileID: 0}
+  particles1: {fileID: 1612572748}
+  particles2: {fileID: 1845244572}
+  horrorTheme: {fileID: 8300000, guid: 7efd66b22e78caa4c805e4c149e72799, type: 3}
 --- !u!4 &2036309970
 Transform:
   m_ObjectHideFlags: 0
