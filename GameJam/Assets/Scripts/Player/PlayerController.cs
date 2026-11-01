@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public bool InDialog { get; private set; } = false;
 
     [SerializeField] private DialogsController dialogsController;
+    [SerializeField] private GameObject interactText;
 
     private InputAction moveAction;
     private InputAction eatAction;
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TryInteract()
+    public void TryInteract(bool interact = true)
     {
         Vector2 origin = transform.position;
         origin.y = origin.y + raycastOffset;
@@ -65,9 +66,12 @@ public class PlayerController : MonoBehaviour
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
             if (interactable != null)
             {
-                interactable.Interact();
+                if (interact) interactable.Interact();
+                else interactText.SetActive(true);
+                return;
             }
         }
+        interactText.SetActive(false);
     }
 
     public bool TryEat()
@@ -120,6 +124,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        TryInteract(false);
         StateMachine.CurrentState.AnimationUpdate();
         StateMachine.CurrentState.LogicUpdate();
     }
