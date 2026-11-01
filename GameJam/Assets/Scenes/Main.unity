@@ -3276,6 +3276,112 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.718506, y: 8.028297}
   m_EdgeRadius: 0
+--- !u!1 &216102199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 216102200}
+  - component: {fileID: 216102203}
+  - component: {fileID: 216102202}
+  - component: {fileID: 216102201}
+  m_Layer: 0
+  m_Name: first
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &216102200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216102199}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -22.2, y: 0.1577301, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 685787831}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &216102201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216102199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fece75585dad8164691df3eb7c18b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonologSOViewer
+  monologObject: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
+--- !u!114 &216102202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216102199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4fe2927f846e348bf38cf1247aa88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoryTrigger
+  storyEvent: 0
+--- !u!61 &216102203
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216102199}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 1.8841934, y: -2.0070724}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 11.567856, y: 5.014145}
+  m_EdgeRadius: 0
 --- !u!1001 &223176331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8020,7 +8126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &629856519
 SpriteRenderer:
   serializedVersion: 2
@@ -8656,7 +8762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &685787831
 Transform:
   m_ObjectHideFlags: 0
@@ -8671,6 +8777,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 784355056}
+  - {fileID: 216102200}
   - {fileID: 1706198315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10158,6 +10265,7 @@ GameObject:
   - component: {fileID: 784355056}
   - component: {fileID: 784355058}
   - component: {fileID: 784355057}
+  - component: {fileID: 784355059}
   m_Layer: 0
   m_Name: beforeTennis
   m_TagString: Untagged
@@ -10193,7 +10301,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryTrigger
   storyEvent: 1
-  dialog: tennis trap
 --- !u!61 &784355058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10240,6 +10347,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.567856, y: 5.014145}
   m_EdgeRadius: 0
+--- !u!114 &784355059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784355055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fece75585dad8164691df3eb7c18b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonologSOViewer
+  monologObject: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
 --- !u!1 &800466200
 GameObject:
   m_ObjectHideFlags: 0
@@ -15109,7 +15229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1162495627
 SpriteRenderer:
   serializedVersion: 2
@@ -15252,11 +15372,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.037582397, y: 0.018802643}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15266,7 +15386,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.43, y: 2.09}
+  m_Size: {x: 4.332245, y: 2.8042831}
   m_EdgeRadius: 0
 --- !u!1001 &1200421880
 PrefabInstance:
@@ -16604,6 +16724,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 423435555051546636, guid: fbecdde1a0fa3a1418475b0b57e1853f, type: 3}
   m_PrefabInstance: {fileID: 1353851620}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1378901003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1378901005}
+  - component: {fileID: 1378901004}
+  m_Layer: 0
+  m_Name: CollectableController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1378901004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378901003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f2b8455ef20f844a648a6139dc1063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectableController
+  edibles:
+  - {fileID: 7754071}
+  - {fileID: 606927940}
+  - {fileID: 1993253549}
+  - {fileID: 367900557}
+  - {fileID: 42262337}
+  - {fileID: 1639342288}
+  - {fileID: 327026634}
+  - {fileID: 1162495626}
+  - {fileID: 1560795861}
+  - {fileID: 1246175162}
+--- !u!4 &1378901005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378901003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 208.25185, y: 131.87497, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1379840037
 GameObject:
   m_ObjectHideFlags: 0
@@ -25700,15 +25875,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogsController
   dialogWindow: {fileID: 8559653779927744799}
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  dialogAction:
-    m_Name: Dialog
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: cb509c0f-8b4e-4046-b471-6b7a8c2cc915
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!4 &1653563538
 Transform:
   m_ObjectHideFlags: 0
@@ -26146,6 +26312,7 @@ GameObject:
   - component: {fileID: 1706198315}
   - component: {fileID: 1706198317}
   - component: {fileID: 1706198316}
+  - component: {fileID: 1706198318}
   m_Layer: 0
   m_Name: beforeCracks
   m_TagString: Untagged
@@ -26181,7 +26348,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryTrigger
   storyEvent: 2
-  dialog: cracks trap
 --- !u!61 &1706198317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26228,6 +26394,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.567856, y: 5.014145}
   m_EdgeRadius: 0
+--- !u!114 &1706198318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706198314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fece75585dad8164691df3eb7c18b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonologSOViewer
+  monologObject: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
 --- !u!1 &1710469539
 GameObject:
   m_ObjectHideFlags: 0
@@ -35270,6 +35449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3902c52cfb527a84cb5c97482094d831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryController
+  coridor: {fileID: 629856518}
+  coridorWall: {fileID: 1902265773}
+  finalmonolog: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
+  bedroommonolog: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
 --- !u!4 &2036309970
 Transform:
   m_ObjectHideFlags: 0
@@ -36900,6 +37083,7 @@ SceneRoots:
   - {fileID: 1767483499}
   - {fileID: 684035028}
   - {fileID: 2036309970}
+  - {fileID: 1378901005}
   - {fileID: 685787831}
   - {fileID: 1653563538}
   - {fileID: 147852348}

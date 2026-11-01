@@ -88,9 +88,8 @@ public class PlayerController : MonoBehaviour
         {
             IEdible edible = hit.collider.GetComponent<IEdible>();
             if (edible != null)
-            {
-                edible.Eat();
-                return true;
+            {                
+                return edible.Eat();
             }
         }
         return false;
@@ -155,7 +154,6 @@ public class PlayerController : MonoBehaviour
         if (InDialog) return;
         moveAction.Disable();
         InDialog = true;
-        Debug.Log("dialog started");
         StateMachine.ChangeState(new InteractState(StateMachine));
     }
 
