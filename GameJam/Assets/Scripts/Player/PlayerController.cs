@@ -84,9 +84,8 @@ public class PlayerController : MonoBehaviour
         {
             IEdible edible = hit.collider.GetComponent<IEdible>();
             if (edible != null)
-            {
-                edible.Eat();
-                return true;
+            {                
+                return edible.Eat();
             }
         }
         return false;

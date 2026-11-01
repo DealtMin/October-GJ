@@ -8256,6 +8256,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7578074700727911401, guid: 471922023dbf1934da58f82bc654f0d9, type: 3}
+      propertyPath: dialogsController
+      value: 
+      objectReference: {fileID: 1653563537}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10150,6 +10154,7 @@ GameObject:
   - component: {fileID: 784355056}
   - component: {fileID: 784355058}
   - component: {fileID: 784355057}
+  - component: {fileID: 784355059}
   m_Layer: 0
   m_Name: beforeTennis
   m_TagString: Untagged
@@ -10185,7 +10190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryTrigger
   storyEvent: 1
-  dialog: tennis trap
 --- !u!61 &784355058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10232,6 +10236,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.567856, y: 5.014145}
   m_EdgeRadius: 0
+--- !u!114 &784355059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784355055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fece75585dad8164691df3eb7c18b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonologSOViewer
+  monologObject: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
 --- !u!1 &800466200
 GameObject:
   m_ObjectHideFlags: 0
@@ -16596,6 +16613,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 423435555051546636, guid: fbecdde1a0fa3a1418475b0b57e1853f, type: 3}
   m_PrefabInstance: {fileID: 1353851620}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1378901003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1378901005}
+  - component: {fileID: 1378901004}
+  m_Layer: 0
+  m_Name: CollectableController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1378901004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378901003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f2b8455ef20f844a648a6139dc1063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectableController
+--- !u!4 &1378901005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378901003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 208.25185, y: 131.87497, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1379840037
 GameObject:
   m_ObjectHideFlags: 0
@@ -25689,15 +25750,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogsController
   dialogWindow: {fileID: 8559653779927744799}
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  dialogAction:
-    m_Name: Dialog
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: cb509c0f-8b4e-4046-b471-6b7a8c2cc915
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!4 &1653563538
 Transform:
   m_ObjectHideFlags: 0
@@ -26135,6 +26187,7 @@ GameObject:
   - component: {fileID: 1706198315}
   - component: {fileID: 1706198317}
   - component: {fileID: 1706198316}
+  - component: {fileID: 1706198318}
   m_Layer: 0
   m_Name: beforeCracks
   m_TagString: Untagged
@@ -26170,7 +26223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryTrigger
   storyEvent: 2
-  dialog: cracks trap
 --- !u!61 &1706198317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26217,6 +26269,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.567856, y: 5.014145}
   m_EdgeRadius: 0
+--- !u!114 &1706198318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706198314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fece75585dad8164691df3eb7c18b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonologSOViewer
+  monologObject: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
 --- !u!1 &1710469539
 GameObject:
   m_ObjectHideFlags: 0
@@ -36563,6 +36628,7 @@ SceneRoots:
   - {fileID: 1767483499}
   - {fileID: 684035028}
   - {fileID: 2036309970}
+  - {fileID: 1378901005}
   - {fileID: 685787831}
   - {fileID: 1653563538}
   - {fileID: 147852348}
