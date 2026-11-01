@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
 
     public PlayerStateMachine StateMachine { get; private set; }
     public Vector2 MoveInput { get; private set; }
-    public bool InteractInput { get; private set; }
+    public bool InteractInput { get; private set; } = false;
+    public bool InDialog { get; private set; } = false;
 
     private InputAction moveAction;
     private InputAction eatAction;
@@ -25,7 +26,6 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private void Awake()
     {
-        InteractInput = false;
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         Rigidbody = GetComponent<Rigidbody2D>();
@@ -135,6 +135,19 @@ public class PlayerController : MonoBehaviour
 
         eatAction.started -= OnEatPerformed;
         eatAction.Disable();         
+    }
+
+    public void StartDialog()
+    {
+        InDialog = true;
+        Debug.Log("dialog started");
+        StateMachine.ChangeState(new InteractState(StateMachine));
+        ExitDialog(); // ЗАГЛУШКА ПОТОМ УБРАТЬ
+    }
+
+    public void ExitDialog()
+    {
+        InDialog = false;
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)

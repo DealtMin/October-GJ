@@ -80,3 +80,17 @@ class EatState: AbstractPlayerState
         rb.linearVelocity = Vector2.zero;
     }
 }
+
+class DialogState: AbstractPlayerState
+{
+    public DialogState(PlayerStateMachine sm) : base(sm) { }
+    public override void Enter() => _stateMachine.Player.Animator.SetBool("Idle", true);
+    public override void Exit() => _stateMachine.Player.Animator.SetBool("Idle", false);
+    public override void PhysicsUpdate() {
+        var rb = _stateMachine.Player.Rigidbody; 
+        rb.linearVelocity = Vector2.zero;
+    }
+    public override void LogicUpdate() {
+        if (!_stateMachine.Player.InDialog) _stateMachine.ChangeState(new IdleState(_stateMachine));
+    }
+}

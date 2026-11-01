@@ -13,7 +13,6 @@ public class SpriteScroller : MonoBehaviour
     void Awake()
     {
         var sr = GetComponent<SpriteRenderer>();
-        // Клонируем материал, чтобы не менять общий ассет
         _mat = new Material(sr.sharedMaterial);
         sr.material = _mat;
     }
