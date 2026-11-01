@@ -8,6 +8,24 @@ public class UIController : MonoBehaviour
     [SerializeField] Sprite buttonHoverSprite;
     [SerializeField] Sprite buttonIdleSprite;
     [SerializeField] GameObject settingsPanel;
+
+    [SerializeField] private Sprite eyesOpen;
+    [SerializeField] private Sprite eyesClosed;
+
+    [SerializeField] private Image leftGirl;
+    [SerializeField] private Image rightGirl;
+
+    public void OnExitHover()
+    {
+        leftGirl.sprite = eyesClosed;
+        rightGirl.sprite = eyesOpen;
+    }
+    
+    public void OnPlayHover()
+    {
+        rightGirl.sprite = eyesClosed;
+        leftGirl.sprite = eyesOpen;
+    }
     
     public void OnHoverEnter(Transform obj)
     {
@@ -17,6 +35,8 @@ public class UIController : MonoBehaviour
     public void OnHoverExit(Transform obj)
     {
         obj.localScale /= scaleFactor;
+        leftGirl.sprite = eyesClosed;
+        rightGirl.sprite = eyesClosed;
         
     }
 
