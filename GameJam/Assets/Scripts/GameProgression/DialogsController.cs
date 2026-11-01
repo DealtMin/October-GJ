@@ -68,7 +68,6 @@ public class DialogsController : MonoBehaviour
 
     public void OnDialogPerformed(InputAction.CallbackContext context)
     {
-        //CloseDialog();
         if (isLastLine)
         {
             dialogEnds.Invoke();
@@ -79,8 +78,8 @@ public class DialogsController : MonoBehaviour
 
     private void ShowNextLine()
     {
-        Debug.Log(currlines.Count + currlines[0]);
         if (currlines.Count == 1) isLastLine = true;
+        else isLastLine = false;
         dialogWindow.SetInfoText(currlines[0]);
         currlines.RemoveAt(0);
     }

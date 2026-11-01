@@ -1,11 +1,17 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class StoryController : MonoBehaviour
 {
     public static StoryController Instance { get; private set; }
     public static Dictionary<StoryEvent, bool> StoryEvents { get; private set; }
+    public static Action ItemCollected;
+    [SerializeField] private GameObject coridor;
+    [SerializeField] private GameObject coridorWall;
+    [SerializeField] private MonologSO finalmonolog;
+    [SerializeField] private MonologSO bedroommonolog;
 
     private void Awake()
     {
@@ -22,6 +28,7 @@ public class StoryController : MonoBehaviour
         {
             StoryEvents[evt] = false;
         }
+        ItemCollected += CheckCount;
     }
 
     private void OnDestroy()
@@ -34,6 +41,31 @@ public class StoryController : MonoBehaviour
     {
         StoryEvents[storyEvent] = true;
     }
+
+    private void CheckCount()
+    {
+        int count = CollectableController.CollectedCount();
+        Debug.Log("collected "+count);
+        if (count == (int)StoryEvent.BedroomDialog)
+        {
+            BedroomDialog();
+        }
+        if (count == (int)StoryEvent.LastDialog)
+        {
+            LastDialog();
+        }        
+    }
+
+    private void LastDialog()
+    {
+        DialogsController.Instance.MonologStart(finalmonolog.monologlines);
+    }
+    private void BedroomDialog()
+    {
+        DialogsController.Instance.MonologStart(bedroommonolog.monologlines);
+        coridor.SetActive(true);
+        coridorWall.SetActive(false);
+    }
 }
 
 public enum StoryEvent
@@ -41,6 +73,7 @@ public enum StoryEvent
     FirstDialog,
     BeforeTennisDialog,
     BeforeCracksDialog,
-    BedroomDialog,
-    LastDialog,    
+    BedroomDialog = 6,
+    LastDialog = 10,    
 }
+

@@ -149,7 +149,6 @@ public class PlayerController : MonoBehaviour
         if (InDialog) return;
         moveAction.Disable();
         InDialog = true;
-        Debug.Log("dialog started");
         StateMachine.ChangeState(new InteractState(StateMachine));
     }
 
