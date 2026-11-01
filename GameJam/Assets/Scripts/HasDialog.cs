@@ -20,5 +20,6 @@ public class HasDialog : MonoBehaviour, IInteractable
     {
         DialogsController.Instance.Description(objectInfo.description);
         _isDialogReaden=true;
+        Debug.Log(name);
     }
 }

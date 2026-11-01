@@ -533,7 +533,7 @@ Transform:
   m_GameObject: {fileID: 41031595}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 13.52, y: 96.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2069,7 +2069,7 @@ Transform:
   m_GameObject: {fileID: 139404092}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 190.1, y: 140.32, z: -94.4}
+  m_LocalPosition: {x: 344.7, y: 96.22, z: -94.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6022,7 +6022,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 2d05e12ba8368a04282e946eb29c2742, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -6122,6 +6122,7 @@ MonoBehaviour:
   source: {fileID: 492759817}
   mixer: {fileID: 24100000, guid: 2d05e12ba8368a04282e946eb29c2742, type: 2}
   mainTheme: {fileID: 8300000, guid: ddccbb4ac16957d4892f973015a901c8, type: 3}
+  kolokol: {fileID: 8300000, guid: 74ec88662fa3c62499c8d3b01efb8e91, type: 3}
 --- !u!4 &492759819
 Transform:
   m_ObjectHideFlags: 0
@@ -6622,7 +6623,7 @@ Transform:
   m_GameObject: {fileID: 602072439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 39.53, y: 47.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7262,11 +7263,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5066189751637191126, guid: 471922023dbf1934da58f82bc654f0d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 190.1
+      value: 344.7
       objectReference: {fileID: 0}
     - target: {fileID: 5066189751637191126, guid: 471922023dbf1934da58f82bc654f0d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 137.6
+      value: 93.5
       objectReference: {fileID: 0}
     - target: {fileID: 5066189751637191126, guid: 471922023dbf1934da58f82bc654f0d9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12915,7 +12916,7 @@ Transform:
   m_GameObject: {fileID: 1130435832}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 190.1, y: 140.32, z: -94.4}
+  m_LocalPosition: {x: 344.7, y: 96.22, z: -94.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14082,7 +14083,7 @@ Transform:
   m_GameObject: {fileID: 1291222244}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -39.7, y: 26.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25141,7 +25142,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 5.0285797, y: 4.310215}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -25151,7 +25152,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 11.057159, y: 8.063957}
   m_EdgeRadius: 0
 --- !u!1 &1819245181
 GameObject:
@@ -32469,6 +32470,7 @@ MonoBehaviour:
   coridorWall: {fileID: 1902265773}
   finalmonolog: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
   bedroommonolog: {fileID: 11400000, guid: 6edfee74c45dd8c4290200ea9eab7323, type: 2}
+  horrorTheme: {fileID: 0}
 --- !u!4 &2036309970
 Transform:
   m_ObjectHideFlags: 0
