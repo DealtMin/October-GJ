@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Diary
   m_EditorClassIdentifier: Assembly-CSharp::Interactable_SO
   name: "\u0414\u043D\u0435\u0432\u043D\u0438\u043A"
-  description: w4d23s
+  description: "\u0434\u043D\u0435\u0432\u043D\u0438\u043A"
   isEatable: 1

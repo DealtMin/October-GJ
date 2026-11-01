@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bed
   m_EditorClassIdentifier: Assembly-CSharp::Interactable_SO
   name: 
-  description: 
+  description: "\u043A\u0440\u043E\u0432\u0430\u0442\u044C"
   isEatable: 0
