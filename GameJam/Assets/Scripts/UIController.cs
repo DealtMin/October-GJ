@@ -15,6 +15,8 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private Image leftGirl;
     [SerializeField] private Image rightGirl;
+
+    [SerializeField] private GameObject[] panels;
     
     private IAudioService _audio;
     [Header("For audio service")]
@@ -79,13 +81,15 @@ public class UIController : MonoBehaviour
         Application.Quit();
     }
 
-    public void OpenSettings()
+    public void OpenPanel(GameObject panel)
     {
-        settingsPanel.SetActive(true);
+        foreach (GameObject panelObj in panels)
+            panelObj.SetActive(false);
+        panel.SetActive(true);
     }
 
-    public void CloseSettings()
+    public void ClosePanel(GameObject panel)
     {
-        settingsPanel.SetActive(false);
+        panel.SetActive(false);
     }
 }
