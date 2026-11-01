@@ -66,13 +66,18 @@ public class StoryController : MonoBehaviour
     private void LastDialog()
     {
         DialogsController.Instance.MonologStart(finalmonolog.monologlines);
+        DialogsController.Instance.dialogEnds += NextScene;
+    }
+
+    void OnDisable()
+    {
+        DialogsController.Instance.dialogEnds -= NextScene;
     }
 
     void NextScene()
     {
-        SceneManager.LoadScene(3);
-        Invoke("NextScene", 10f);
-        
+        SceneManager.LoadScene("FinalScene");
+        Invoke("NextScene", 10f);        
     }
     
     private void BedroomDialog()
@@ -92,6 +97,6 @@ public enum StoryEvent
     BeforeTennisDialog,
     BeforeCracksDialog,
     BedroomDialog = 6,
-    LastDialog = 10,    
+    LastDialog = 1,    
 }
 
