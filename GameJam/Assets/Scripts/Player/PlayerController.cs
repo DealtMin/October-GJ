@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public bool InteractInput { get; private set; } = false;
     public bool InDialog { get; private set; } = false;
 
+    [SerializeField] private DialogsController dialogsController;
+
     private InputAction moveAction;
     private InputAction eatAction;
     private InputAction interactAction;
@@ -105,7 +107,10 @@ public class PlayerController : MonoBehaviour
         interactAction.started += OnInteractPerformed;     
 
         eatAction.started += OnEatPerformed;
-        eatAction.Enable();  
+        eatAction.Enable(); 
+        dialogsController.dialogStarts += StartDialog;
+        dialogsController.dialogEnds += ExitDialog;
+
     }
 
     private void Start()
@@ -134,20 +139,25 @@ public class PlayerController : MonoBehaviour
         interactAction.Disable();   
 
         eatAction.started -= OnEatPerformed;
-        eatAction.Disable();         
+        eatAction.Disable(); 
+
+        dialogsController.dialogStarts -= StartDialog;
+        dialogsController.dialogEnds -= ExitDialog;        
     }
 
     public void StartDialog()
     {
+        if (InDialog) return;
+        moveAction.Disable();
         InDialog = true;
         Debug.Log("dialog started");
         StateMachine.ChangeState(new InteractState(StateMachine));
-        ExitDialog(); // ЗАГЛУШКА ПОТОМ УБРАТЬ
     }
 
     public void ExitDialog()
     {
         InDialog = false;
+        moveAction.Enable();
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)
