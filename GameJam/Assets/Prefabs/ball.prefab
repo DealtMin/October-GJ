@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b20356d2247c441a6efcefe1c9f0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps
+  audioClip: {fileID: 8300000, guid: 09e014142b24644428d6a4cd00d2694b, type: 3}
   respawnPoint: {fileID: 0}
 --- !u!50 &622057186727091337
 Rigidbody2D:
