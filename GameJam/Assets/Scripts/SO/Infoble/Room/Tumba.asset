@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tumba
   m_EditorClassIdentifier: Assembly-CSharp::Interactable_SO
   name: 
-  description: 
+  description: "\u0442\u0443\u043C\u0431\u0430"
   isEatable: 0
