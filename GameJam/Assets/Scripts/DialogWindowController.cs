@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,23 +12,15 @@ public class DialogWindowController : MonoBehaviour
     {
         dialogText.text = text;
         ShowDialog();
-        //Invoke(nameof(CloseDialog), 4f);
     }
 
     public void ShowDialog()
     {
         dialogPanel.SetActive(true);
-        DialogsController.Instance.dialogAction.started += OnDialogPerformed;
     }
 
     public void CloseDialog()
     {
         dialogPanel.SetActive(false);
-        DialogsController.Instance.dialogAction.started -= OnDialogPerformed;
-    }
-
-    public void OnDialogPerformed(InputAction.CallbackContext context)
-    {
-        CloseDialog();
     }
 }

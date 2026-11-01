@@ -1,19 +1,23 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(MonologSOViewer))]
 public class StoryTrigger : MonoBehaviour
 {
     [SerializeField] StoryEvent storyEvent;
-    [SerializeField] string dialog;
+    private MonologSOViewer monolog;
+    void Awake()
+    {
+        monolog = GetComponent<MonologSOViewer>();
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        var player = collision.gameObject.GetComponent<PlayerController>();
-        if (player)
+        if (collision.gameObject.GetComponent<PlayerController>())
         {
             if (!StoryController.StoryEvents[storyEvent])
             {
                 StoryController.SetStoryEvent(storyEvent);
-                player.StartDialog();
+                DialogsController.Instance.MonologStart(monolog.monologlines);
                 gameObject.SetActive(false);
             }
         }
